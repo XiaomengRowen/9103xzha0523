@@ -61,6 +61,10 @@ function draw() {
   let noiseValue = water.getNoiseValue();
   rainbow.display(noiseValue);
 
+   // Draw building reflection
+   building.reflection(128, 0, 128, 100); // Use appropriate alpha value for reflection
+
+
   building.updateColors(noiseValue);
   building.display();
   backgroundShadow.display();
