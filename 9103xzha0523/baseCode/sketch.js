@@ -40,6 +40,8 @@ function setup() {
   let color2 = color(230, 180, 50, 100); // Yellow
   let color3 = color(160, 80, 50, 100); // Red
   water = new Water();
+  seagull1 = new Seagull(-100, -300, 300,100, 1, color(0));          // Original seagull
+  seagull2 = new Seagull(-100, -100, 200, 100, 0.7, color(100)); // Smaller, lighter-colored seagull
   gradientSky = new GradientWave(skyXPos, skyYPos, skyWidth + 200, skyHeight, amplitude, yPercent1, yPercent2, color0, color1, color2, color3);
   gradientSea = new GradientWave(skyXPos, 150, skyWidth + 200, skyHeight, amplitude, yPercent1, yPercent2, color3, color2, color1, color0);
   backgroundShadow = new BackgroundShadow(400, -120, 122);
@@ -47,7 +49,7 @@ function setup() {
   for (let i = 0; i < 99; i++) {
     waves.push(new WaveBrush(0, 148, width / 2, 200));
   }
-  rainbow = new Rainbow(-windowWidth, -windowHeight /4, 300, windowWidth);
+  rainbow = new Rainbow(-windowWidth , -windowHeight /4, 300, windowWidth);
 }
 
 function draw() {
@@ -63,6 +65,10 @@ function draw() {
   building.display();
   backgroundShadow.display();
   water.display();
+  seagull1.move();
+  seagull2.move();
+  seagull1.display();
+  seagull2.display();
 
   for (let wave of waves) {
     wave.edges();

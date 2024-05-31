@@ -1,7 +1,11 @@
 class Seagull {
-  constructor(x, y, size, color) {
+  constructor(x, y, width,height, size, color) {
     this.x = x;
     this.y = y;
+    this.pivotX = x;
+    this.pivotY = y;
+    this.width = width;
+    this.height = height;
     this.size = size;
     this.color = color;
     this.wingAngle = 0;
@@ -40,28 +44,11 @@ class Seagull {
 
   move() {
     // Update position using Perlin noise
-    this.x = noise(this.noiseOffsetX) * width;
-    this.y = noise(this.noiseOffsetY) * height;
+    this.x = this.pivotX + noise(this.noiseOffsetX) * this.width;
+    this.y = this.pivotY + noise(this.noiseOffsetY) * this.height;
 
     // Increment noise offsets for next frame (slower speed)
     this.noiseOffsetX += 0.005;
     this.noiseOffsetY += 0.005;
   }
-}
-
-let seagull1;
-let seagull2;
-
-function setup() {
-  createCanvas(800, 600);
-  seagull1 = new Seagull(100, 300, 1, color(0));          // Original seagull
-  seagull2 = new Seagull(200, 350, 0.7, color(100)); // Smaller, lighter-colored seagull
-}
-
-function draw() {
-  clear(); // Clear the canvas to avoid trailing effect
-  seagull1.display();
-  seagull1.move();
-  seagull2.display();
-  seagull2.move();
 }
