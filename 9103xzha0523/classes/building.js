@@ -9,13 +9,13 @@ class Building {
 
   display() {
     push();
+    //set setting for brush
     scale(.8);
     translate(this.xPos, this.yPos);
     stroke(this.R, this.G, this.B);
+    //Draw Base
     fill(this.R, this.G, this.B);
-    
-    // Draw Base
-    beginShape();
+    beginShape()
     vertex(-800, 0);
     vertex(0, 0);
     vertex(0, -50);
@@ -35,7 +35,7 @@ class Building {
     vertex(-340, -195);
     vertex(-390, -195);
     vertex(-390, -235);
-    // Dome
+    //Dome
     vertex(-400, -255);
     vertex(-430, -275);
     vertex(-430, -295);
@@ -44,7 +44,7 @@ class Building {
     vertex(-450, -275);
     vertex(-470, -265);
     vertex(-480, -245);
-    // Tower
+    //Tower
     vertex(-480, -500);
     vertex(-500, -560);
     vertex(-510, -650);
@@ -58,7 +58,7 @@ class Building {
     vertex(-555, -520);
     vertex(-560, -500);
     vertex(-560, -200);
-    // Left Side Wall
+    //Left Side Wall
     vertex(-590, -180);
     vertex(-600, -170);
     vertex(-630, -190);
@@ -72,19 +72,23 @@ class Building {
     vertex(-950, -50);
     vertex(-950, 0);
     endShape(CLOSE);
-    
     pop();
   }
 
   reflection(r, g, b, a) {
     push();
-    translate(this.xPos, this.yPos + 24);
+    translate(this.xPos, this.yPos - 24);
     scale(.8, -.8); // Flip vertically
     stroke(r, g, b, a);
     fill(r, g, b, a);
     
     // Draw Base
-    beginShape();
+    beginShape()
+    vertex(-730, -100);
+    vertex(-900, -100);
+    vertex(-935, -80);
+    vertex(-950, -50);
+    vertex(-950, 0);
     vertex(-800, 0);
     vertex(0, 0);
     vertex(0, -50);
@@ -92,6 +96,9 @@ class Building {
     vertex(-35, -80);
     vertex(-60, -90);
     vertex(-170, -90);
+    endShape(CLOSE);
+    //City
+    beginShape();
     vertex(-200, -115);
     vertex(-200, -140);
     vertex(-195, -140);
@@ -103,8 +110,19 @@ class Building {
     vertex(-280, -165);
     vertex(-340, -195);
     vertex(-390, -195);
-    vertex(-390, -235);
-    // Dome
+    //Left Side Wall
+    vertex(-590, -180);
+    vertex(-600, -170);
+    vertex(-630, -190);
+    vertex(-640, -215);
+    vertex(-640, -180);
+    vertex(-700, -180);
+    vertex(-730, -150);
+    vertex(-730, -125);
+    endShape(CLOSE);
+    beginShape();
+    //Dome
+    vertex(-390, -215);
     vertex(-400, -255);
     vertex(-430, -275);
     vertex(-430, -295);
@@ -112,8 +130,12 @@ class Building {
     vertex(-450, -295);
     vertex(-450, -275);
     vertex(-470, -265);
-    vertex(-480, -245);
-    // Tower
+    vertex(-560, -245);
+    vertex(-560, -200);
+    //Tower
+    endShape(CLOSE);
+    beginShape();
+    vertex(-480, -285);
     vertex(-480, -500);
     vertex(-500, -560);
     vertex(-510, -650);
@@ -126,21 +148,8 @@ class Building {
     vertex(-550, -500);
     vertex(-555, -520);
     vertex(-560, -500);
-    vertex(-560, -200);
-    // Left Side Wall
-    vertex(-590, -180);
-    vertex(-600, -170);
-    vertex(-630, -190);
-    vertex(-640, -215);
-    vertex(-640, -180);
-    vertex(-700, -180);
-    vertex(-730, -150);
-    vertex(-730, -100);
-    vertex(-900, -100);
-    vertex(-935, -80);
-    vertex(-950, -50);
-    vertex(-950, 0);
-    endShape(CLOSE);
+    vertex(-560, -275);
+    endShape(CLOSE)
     
     pop();
   }
