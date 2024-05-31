@@ -74,7 +74,16 @@ function setup() {
   seagull2 = new Seagull(-100, -100, 200, 100, 0.7, color(100)); // Smaller, lighter-colored seagull
   seagull3 = new Seagull(100, -200, 250, 150, 0.8, color(150));  // Another seagull
   seagull4 = new Seagull(200, -150, 220, 130, 0.6, color(200));  // One more seagull
+  seagull5 = new Seagull(-50, -250, 260, 120, 0.9, color(50));   // Additional seagull
+  seagull6 = new Seagull(150, -300, 240, 110, 0.75, color(75));  // Additional seagull
+  seagull7 = new Seagull(0, -350, 280, 140, 1.1, color(125));    // Additional seagull
+  seagull8 = new Seagull(250, -400, 270, 130, 1.05, color(175)); // Additional seagull
+  seagull9 = new Seagull(300, -450, 290, 150, 1.2, color(225));  // Additional seagull
+  seagull10 = new Seagull(-200, -200, 230, 120, 0.85, color(200)); // Additional seagull
+  seagull11 = new Seagull(50, -250, 220, 110, 0.7, color(220));   // Additional seagull
+  seagull12 = new Seagull(300, -100, 210, 100, 0.95, color(240)); // Additional seagull
 }
+
 
 function draw() {
   background("#FFFFFF");
@@ -103,10 +112,27 @@ function draw() {
   seagull2.move();
   seagull3.move();
   seagull4.move();
+  seagull5.move();
+  seagull6.move();
+  seagull7.move();
+  seagull8.move();
+  seagull9.move();
+  seagull10.move();
+  seagull11.move();
+  seagull12.move();
+  
   seagull1.display();
   seagull2.display();
   seagull3.display();
   seagull4.display();
+  seagull5.display();
+  seagull6.display();
+  seagull7.display();
+  seagull8.display();
+  seagull9.display();
+  seagull10.display();
+  seagull11.display();
+  seagull12.display();
 
   // Update and display waves
   for (let wave of waves) {
