@@ -11,10 +11,8 @@ Building on our group's code, I used Perlin noise values to gradually transition
 
 ### Dynamic Effect of the Halo
 The rainbow halo is positioned on the upper left side of the screen. It appears behind the building, with a gradient sky and sea in the background, creating a harmonious and ethereal visual effect. The rainbow always surrounds the main building, acting like the light produced by the building, making it a background element and adding visual depth to the scene.
-
 The position and colors of the rainbow halo change with the Perlin noise value, dynamically adjusting its arc and thickness based on noise values.
 
 ### The Flying Effect of Seagulls
-The seagulls are two birds flying in the sky, using Perlin noise to achieve smooth motion paths. The two seagulls, each with unique initial positions, independently animate their wings with an oscillating motion. The first seagull is larger and darker, while the second is smaller and lighter-colored.
-
+The seagulls are birds flying in the sky, using Perlin noise to achieve smooth motion paths. The each of these seagulls with unique initial positions, independently animate their wings with an oscillating motion. Some seagulls are larger and darker, while others are smaller and lighter-colored.
 During each frame of the draw loop, the seagulls update their positions and are redrawn on the screen. Their positions dynamically adjust to screen resizing, maintaining visual appeal across different screen sizes.

@@ -72,6 +72,8 @@ function setup() {
   // Initialize seagulls
   seagull1 = new Seagull(-100, -300, 300, 100, 1, color(0));          // Original seagull
   seagull2 = new Seagull(-100, -100, 200, 100, 0.7, color(100)); // Smaller, lighter-colored seagull
+  seagull3 = new Seagull(100, -200, 250, 150, 0.8, color(150));  // Another seagull
+  seagull4 = new Seagull(200, -150, 220, 130, 0.6, color(200));  // One more seagull
 }
 
 function draw() {
@@ -99,8 +101,12 @@ function draw() {
   // Move and display seagulls
   seagull1.move();
   seagull2.move();
+  seagull3.move();
+  seagull4.move();
   seagull1.display();
   seagull2.display();
+  seagull3.display();
+  seagull4.display();
 
   // Update and display waves
   for (let wave of waves) {
