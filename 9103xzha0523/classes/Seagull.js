@@ -1,5 +1,5 @@
 class Seagull {
-  constructor(x, y, width,height, size, color) {
+  constructor(x, y, width, height, size, color) {
     this.x = x;
     this.y = y;
     this.pivotX = x;
@@ -10,8 +10,10 @@ class Seagull {
     this.color = color;
     this.wingAngle = 0;
     this.wingSpeed = 0.1;
-    this.noiseOffsetX = random(1000); // Offset for Perlin noise in x direction
-    this.noiseOffsetY = random(1000); // Offset for Perlin noise in y direction
+    // Offset for Perlin noise in x direction
+    this.noiseOffsetX = random(1000); 
+    // Offset for Perlin noise in y direction
+    this.noiseOffsetY = random(1000); 
   }
 
   display() {

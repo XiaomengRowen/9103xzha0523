@@ -77,6 +77,7 @@ class GradientWave {
         ellipse(x + 10 * n5, waveHeight2 + y + 10 * n6, random(5, 30), random(5, 30)); //random Deviation
       }
 
+      // Increment noise offsets
       nx1 += this.frequency;
       nx2 += this.frequency;
       nx3 += this.frequency;
@@ -84,6 +85,7 @@ class GradientWave {
       nx5 += this.frequency;
       nx6 += this.frequency;
     }
+    // Increment base offsets to animate the wave effect
     this.offset1 += 0.05;
     this.offset2 += 0.05;
     this.offset3 += 0.05;
@@ -93,4 +95,3 @@ class GradientWave {
     pop();
   }
 }
-

@@ -4,13 +4,16 @@ class Rainbow {
     this.yPos = yPos;
     this.maxRadius = maxRadius;
     this.screenWidth = screenWidth;
-    this.noiseOffset = random(1000); // Independent noise offset for the rainbow
+    // Independent noise offset for the rainbow
+    this.noiseOffset = random(1000);
   }
 
   display(noiseValue) {
     push();
     translate(this.xPos, this.yPos);
     noFill();
+    
+    // Array of colors for the rainbow bands
     let colors = [
       color(238, 89, 87), // Red
       color(255, 165, 0), // Orange
@@ -21,13 +24,16 @@ class Rainbow {
       color(121, 125, 163) // Violet
     ];
 
-    let thickness = map(noiseValue, 0, 1, 10, 30); // Adjust the thickness based on noise value
+    // Adjust the thickness of the bands based on the noise value
+    let thickness = map(noiseValue, 0, 1, 10, 30);
 
+    // Draw the rainbow bands from outermost to innermost
     for (let i = colors.length - 1; i >= 0; i--) {
       stroke(colors[i]);
       strokeWeight(thickness);
       let radius = this.maxRadius - i * thickness;
-      arc(0, 0, this.screenWidth* 3, radius, TWO_PI, PI);
+      // Draw each band as an arc
+      arc(0, 0, this.screenWidth * 3, radius, TWO_PI, PI);
     }
     pop();
   }
