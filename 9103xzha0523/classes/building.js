@@ -76,3 +76,4 @@ class Building {
     this.B = noiseValue * 128; // Blue channel (purple to black transition)
   }
 }
+

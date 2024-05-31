@@ -1,31 +1,37 @@
 function windowResized() {
-  print("resized")
+  print("resized");
   resizeCanvas(windowWidth, windowHeight);
-  let skyXPos = -windowWidth/2;
-  let skyYPos = -windowHeight/2;
+  let skyXPos = -windowWidth / 2;
+  let skyYPos = -windowHeight / 2;
   let skyWidth = windowWidth;
-  let skyHeight = windowHeight/2+120
+  let skyHeight = windowHeight / 2 + 120;
   waves = [];
   for (let i = 0; i < 99; i++) {
-    waves.push(new WaveBrush(0, 148, width/2, 200));
+    waves.push(new WaveBrush(0, 148, width / 2, 200));
   }
-  gradientSky = new GradientWave(skyXPos, skyYPos, skyWidth+200, skyHeight, amplitude, yPercent1, yPercent2, color0, color1, color2, color3);
-  gradientSea = new GradientWave(skyXPos, 150, skyWidth+200, skyHeight, amplitude, yPercent1, yPercent2, color3, color2, color1, color0); 
+  gradientSky = new GradientWave(skyXPos, skyYPos, skyWidth + 200, skyHeight, amplitude, yPercent1, yPercent2, color0, color1, color2, color3);
+  gradientSea = new GradientWave(skyXPos, 150, skyWidth + 200, skyHeight, amplitude, yPercent1, yPercent2, color3, color2, color1, color0);
+
+  // Update rainbow position 
+  rainbow = new Rainbow(-windowWidth , -windowHeight /4, 300, windowWidth);
 }
+
 let building;
 let water;
 let gradientSky;
-let gradientSea
+let gradientSea;
 let waves = [];
+let rainbow; 
+
 function setup() {
   angleMode(DEGREES);
   createCanvas(windowWidth, windowHeight, WEBGL);
   water = new Water();
   building = new Building(width / 2, height, 128, 0, 128); // Initial color is purple
-  let skyXPos = -windowWidth/2;
-  let skyYPos = -windowHeight/2;
+  let skyXPos = -windowWidth / 2;
+  let skyYPos = -windowHeight / 2;
   let skyWidth = windowWidth;
-  let skyHeight = windowHeight/2+120
+  let skyHeight = windowHeight / 2 + 120;
   let amplitude = 50;
   let yPercent1 = 0.2;
   let yPercent2 = 0.5;
@@ -34,31 +40,34 @@ function setup() {
   let color2 = color(230, 180, 50, 100); // Yellow
   let color3 = color(160, 80, 50, 100); // Red
   water = new Water();
-  gradientSky = new GradientWave(skyXPos, skyYPos, skyWidth+200, skyHeight, amplitude, yPercent1, yPercent2, color0, color1, color2, color3);
-  gradientSea = new GradientWave(skyXPos, 150, skyWidth+200, skyHeight, amplitude, yPercent1, yPercent2, color3, color2, color1, color0);
+  gradientSky = new GradientWave(skyXPos, skyYPos, skyWidth + 200, skyHeight, amplitude, yPercent1, yPercent2, color0, color1, color2, color3);
+  gradientSea = new GradientWave(skyXPos, 150, skyWidth + 200, skyHeight, amplitude, yPercent1, yPercent2, color3, color2, color1, color0);
   backgroundShadow = new BackgroundShadow(400, -120, 122);
   building = new Building(0, 120, 0, 0, 0);
   for (let i = 0; i < 99; i++) {
-    waves.push(new WaveBrush(0, 148, width/2, 200));
+    waves.push(new WaveBrush(0, 148, width / 2, 200));
   }
+  rainbow = new Rainbow(-windowWidth, -windowHeight /4, 300, windowWidth);
 }
 
 function draw() {
-  background("#FFFFFF")
+  background("#FFFFFF");
   gradientSky.display();
   gradientSea.display();
+
+  // Draw rainbow behind the building
+  let noiseValue = water.getNoiseValue();
+  rainbow.display(noiseValue);
+
+  building.updateColors(noiseValue);
   building.display();
   backgroundShadow.display();
   water.display();
+
   for (let wave of waves) {
     wave.edges();
     wave.flock(waves, 1, 0, 1);
     wave.update();
-    wave.display(1,1,55,0,255);
+    wave.display(1, 1, 55, 0, 255);
   }
-
-  water.display();
-  let noiseValue = water.getNoiseValue();
-  building.updateColors(noiseValue);
-  building.display();
 }
