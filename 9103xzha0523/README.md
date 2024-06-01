@@ -19,10 +19,10 @@ The seagulls are birds flying in the sky, using Perlin noise to achieve smooth m
 During each frame of the draw loop, the seagulls update their positions and are redrawn on the screen. Their positions dynamically adjust to screen resizing, maintaining visual appeal across different screen sizes.
 
 ## References to inspiration
-Our group chose the world-famous painting "Saint Georges Majeur au Crepuscule" as our inspiration.    The painting captures a magnificent sunset, evoking a sense of beauty tinged with the melancholy of its fleeting nature.    This imagery brought to mind the works of Japanese science fiction writer 伊藤 計劃, particularly his novel "ハーモニー(harmony)."    In this work, Itoh depicts a utopian world—a city that is beautiful and harmonious yet filled with deceit.
+Our group chose the world-famous painting "Saint Georges Majeur au Crepuscule" as our inspiration. The painting captures a magnificent sunset, evoking a sense of beauty tinged with the melancholy of its fleeting nature. This imagery brought to mind the works of Japanese science fiction writer 伊藤 計劃, particularly his novel "ハーモニー(harmony)." In this work, Itoh depicts a utopian world—a city that is beautiful and harmonious yet filled with deceit.
 
 ![An image of harmony_](readmeImages/harmony_.png)
 
-Inspired by these themes, I envisioned a distant cityscape standing majestically across a shimmering sea in our project.    The buildings appear close yet distant, blending the clarity and brilliance of the city with an ethereal and elusive quality.    I aimed to create a scene that is both dazzling and dreamlike, evoking a sense of "物の哀れ"—the awareness of the transience of things and the gentle sadness that comes with it.
+Inspired by these themes, I envisioned a distant cityscape standing majestically across a shimmering sea in our project. The buildings appear close yet distant, blending the clarity and brilliance of the city with an ethereal and elusive quality.  I aimed to create a scene that is both dazzling and dreamlike, evoking a sense of "物の哀れ"—the awareness of the transience of things and the gentle sadness that comes with it.
 
 This inspiration guided my approach to the animation, where I sought to capture the juxtaposition of beauty and impermanence, crafting an atmosphere that is both mesmerizing and haunting.
