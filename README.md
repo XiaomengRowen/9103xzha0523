@@ -1,7 +1,12 @@
 # Creative Coding Major Assignment-Individual Task for Perlin noise and randomness
 
 ## Instructions on interact of the work
-In this project, I used p5.js to recreate the famous painting 'Saint Georges majeur au crépuscule' and added some new imaginative elements. You don't need to click or interact with the screen because it's a smooth animation. Once the animation loads, you will see the main building's color gradually changing. Initially, it is purple, and slowly it transitions to dark gray. Surrounding it are rainbow-colored rings that sway and change size, twinkling as if the building is emitting light. You will see two seagulls flying above the sea. The sky and waves are also gently pulsating, with shimmering light reflecting on the water's surface.
+In this project, I used p5.js to recreate the famous painting 'Saint Georges majeur au crépuscule' and added some new imaginative elements. You don't need to click or interact with the screen because it's a smooth animation.
+- Once the animation loads, you will see the main building's color gradually changing.   Initially, it is purple, and slowly it transitions to dark gray.
+- you can also see the background shandow's color changing. From gray to pink, very slowly.
+- Surrounding it are rainbow-colored rings that sway and change size, twinkling as if the building is emitting light.
+- You will see some seagulls flying above the sea.
+- The sky and waves are also gently pulsating, with shimmering light reflecting on the water's surface.
 
 ## Details of individual approach
 I choose perlin noise to drive my individual code, here is the detail instructions on the interact work.
