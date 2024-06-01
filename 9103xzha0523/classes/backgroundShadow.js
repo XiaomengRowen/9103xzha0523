@@ -1,14 +1,18 @@
 class BackgroundShadow {
   constructor(xPos, yPos, opacity) {
-    // Initialize any properties if needed
+    // Initialize properties
     this.xPos = xPos;
     this.yPos = yPos;
     this.opacity = opacity;
+    this.noiseOffset = random(1000); // Offset for Perlin noise
+    this.R = 112;
+    this.G = 103;
+    this.B = 114;
   }
 
   display() {
     push();
-    // Move the lighthouse to position
+    // Move the building to position
     translate(this.xPos, this.yPos);
     scale(3);
     // Draw the shadow with a blur effect
@@ -20,15 +24,16 @@ class BackgroundShadow {
     // Disable the stroke for the shape
     noStroke();
 
-    // Draw the original lighthouse shape
-    this.drawLighthouse();
+    // Draw the original building shape
+    this.drawBuilding();
     pop();
+
+    // Increment noise offset for the next frame
+    this.noiseOffset += 0.01;
   }
 
-  drawLighthouse() {
-
-
-    fill(112, 103, 114,this.opacity); // Shape color with no transparency
+  drawBuilding() {
+    fill(this.R, this.G, this.B, this.opacity); // Shape color with updated values
     beginShape();
     vertex(53, 0);
     vertex(55, 2);
@@ -61,5 +66,12 @@ class BackgroundShadow {
     vertex(53, 17);
     vertex(53, 0);
     endShape(CLOSE);
+  }
+
+  updateColors(noiseValue) {
+    // Interpolate between initial color (112, 103, 114) and pink (255, 192, 203)
+    this.R = lerp(112, 255, noiseValue);
+    this.G = lerp(103, 192, noiseValue);
+    this.B = lerp(114, 203, noiseValue);
   }
 }

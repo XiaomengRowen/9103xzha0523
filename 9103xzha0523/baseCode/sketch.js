@@ -104,6 +104,7 @@ function draw() {
   building.display();
   
   // Display background shadow and water
+  backgroundShadow.updateColors(noiseValue);
   backgroundShadow.display();
   water.display();
   
