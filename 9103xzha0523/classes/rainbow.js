@@ -15,13 +15,13 @@ class Rainbow {
     
     // Array of colors for the rainbow bands
     let colors = [
-      color(238, 89, 87), // Red
-      color(255, 165, 0), // Orange
-      color(255, 217, 72), // Yellow
-      color(254, 225, 195), // Green
+      color(226, 107, 125), // Red
+      color(231, 130, 146), // pink
+      color(234, 150, 164), // light pink
+      color(254, 225, 195), // yellow
       color(165, 183, 234), // Blue
       color(126, 82, 175), // Indigo
-      color(121, 125, 163) // Violet
+      color(121, 125, 163) // grey
     ];
 
     // Adjust the thickness of the bands based on the noise value

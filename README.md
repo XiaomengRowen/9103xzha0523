@@ -6,7 +6,7 @@ In this project, I used p5.js to recreate the famous painting 'Saint Georges maj
 - you can also see the background shandow's color changing. From gray to pink, very slowly.
 - Surrounding it are rainbow-colored rings that sway and change size, twinkling as if the building is emitting light.
 - You will see some seagulls flying above the sea.
-- The sky and waves are also gently pulsating, with shimmering light reflecting on the water's surface.
+- You'll also see a dynamic cloud effect that surrounds buildings and the sea with a slight rhythm
 
 ## Details of individual approach
 I choose perlin noise to drive my individual code, here is the detail instructions on the interact work.
@@ -23,6 +23,10 @@ The position and colors of the rainbow halo change with the Perlin noise value, 
 The seagulls are birds flying in the sky, using Perlin noise to achieve smooth motion paths. The each of these seagulls with unique initial positions, independently animate their wings with an oscillating motion. Some seagulls are larger and darker, while others are smaller and lighter-colored.
 During each frame of the draw loop, the seagulls update their positions and are redrawn on the screen. Their positions dynamically adjust to screen resizing, maintaining visual appeal across different screen sizes.
 
+### Dynamic Effect of the Cloud
+The Cloud effect is positioned across the canvas, simulating natural smoke or cloud-like textures.  This dynamic effect adds a layer of realism and depth to the scene, blending seamlessly with other visual elements.  The cloud is generated using Perlin noise, which ensures smooth and continuous variation in texture. 
+The position of the cloud will change as the Berlin noise value changes
+
 ## References to inspiration
 Our group chose the world-famous painting "Saint Georges Majeur au Crepuscule" as our inspiration.    The painting captures a magnificent sunset, evoking a sense of beauty tinged with the melancholy of its fleeting nature.    This imagery brought to mind the works of Japanese science fiction writer 伊藤 計劃, particularly his novel "ハーモニー(harmony)."    In this work, Itoh depicts a utopian world—a city that is beautiful and harmonious yet filled with deceit.
 
@@ -30,7 +34,7 @@ Our group chose the world-famous painting "Saint Georges Majeur au Crepuscule" a
 
 Inspired by these themes, I envisioned a distant cityscape standing majestically across a shimmering sea in our project.    The buildings appear close yet distant, blending the clarity and brilliance of the city with an ethereal and elusive quality.    I aimed to create a scene that is both dazzling and dreamlike, evoking a sense of "物の哀れ"—the awareness of the transience of things and the gentle sadness that comes with it.
 
-This inspiration guided my approach to the animation, where I sought to capture the juxtaposition of beauty and impermanence, crafting an atmosphere that is both mesmerizing and haunting.
+This inspiration guided my approach to the animation. To draw on the feel of the image, I painted a cloud-controlled by Perlin noise to simulate the feeling of fog in the image. And I added some seagulls to match the birds in the picture. A rainbow halo of pink and purple was added around the building to make it appear mysterious
 
  ## Short Technical Explanation
  Based on the team's code, I made the following changes:
@@ -51,3 +55,7 @@ The red (R) and blue (B) channels are adjusted to transition between purple and 
 - The constructor initializes the position (x, y), dimensions (width, height), size, and color of the seagull. And add the wingAngle, wingSpeed to simulate wing flapping.
 - Use the noiseOffsetX, noiseOffsetY to offsets random Perlin noise, creating smooth and varied movement in the x and y directions.
 - Draws the left and right wings using beginShape(), vertex(), and endShape().  And updates the wingAngle to simulate continuous wing flapping. The move() method updates the seagull's position based on Perlin noise values.
+
+5.`Cloud` is a dynamic effect implemented using Perlin noise to simulate natural smoke or cloud-like textures in the scene. 
+- Key variables include x and y for position, width and height for the cloud's dimensions, noiseScale for determining the granularity of the noise.
+- The display() method generates the cloud by sampling Perlin noise for each pixel, mapping noise values to grayscale colors, and updating pixel data with a slight opacity.   The noiseOffset is incremented over time to create a dynamic, evolving cloud effect, adding depth, realism, and atmospheric enhancement to the visual scene.
